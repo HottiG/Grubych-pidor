@@ -35,12 +35,17 @@ namespace WindowsFormsApp1
             try
             {
 
-                Sum.Bin = Convert.ToString(Convert.ToInt32(x.Bin, 2) + Convert.ToInt32(y.Bin, 2), 2);
+                Sum.Bin = Convert.ToString(Convert.ToInt64(x.Bin, 2) + Convert.ToInt64(y.Bin, 2), 2);
                 return Sum;
             }
             catch (NullReferenceException)
             {
                 Sum.Bin = "Неверный ввод";
+                return Sum;
+            }
+            catch (OverflowException)
+            {
+                Sum.Bin = "Слишком большое значение";
                 return Sum;
             }
         } 
@@ -50,12 +55,17 @@ namespace WindowsFormsApp1
             try
             {
 
-                Sum.Bin = Convert.ToString(Convert.ToInt32(x.Bin, 2) - Convert.ToInt32(y.Bin, 2), 2);
+                Sum.Bin = Convert.ToString(Convert.ToInt64(x.Bin, 2) - Convert.ToInt64(y.Bin, 2), 2);
                 return Sum;
             }
             catch (NullReferenceException)
             {
                 Sum.Bin = "Неверный ввод";
+                return Sum;
+            }
+            catch (OverflowException)
+            {
+                Sum.Bin = "Слишком большое значение";
                 return Sum;
             }
         }
@@ -65,12 +75,17 @@ namespace WindowsFormsApp1
             try
             {
 
-                Sum.Bin = Convert.ToString(Convert.ToInt32(x.Bin, 2) * Convert.ToInt32(y.Bin, 2), 2);
+                Sum.Bin = Convert.ToString(Convert.ToInt64(x.Bin, 2) * Convert.ToInt64(y.Bin, 2), 2);
                 return Sum;
             }
             catch (NullReferenceException)
             {
                 Sum.Bin = "Неверный ввод";
+                return Sum;
+            }
+            catch (OverflowException)
+            {
+                Sum.Bin = "Слишком большое значение";
                 return Sum;
             }
         }
@@ -80,12 +95,17 @@ namespace WindowsFormsApp1
             try
             {
 
-                Sum.Bin = Convert.ToString(Convert.ToInt32(x.Bin, 2) / Convert.ToInt32(y.Bin, 2), 2);
+                Sum.Bin = Convert.ToString(Convert.ToInt64(x.Bin, 2) / Convert.ToInt64(y.Bin, 2), 2);
                 return Sum;
             }
             catch (NullReferenceException)
             {
                 Sum.Bin = "Неверный ввод";
+                return Sum;
+            }
+            catch (OverflowException)
+            {
+                Sum.Bin = "Слишком большое значение";
                 return Sum;
             }
         }
